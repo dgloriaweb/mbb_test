@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/weather', 'App\Http\Controllers\LocationController@index');
+Route::post('/weather', 'App\Http\Controllers\LocationController@show');
