@@ -31,10 +31,10 @@ class LocationController extends Controller
      * @return \Illuminate\Http\Request
      */
     // public function show(String $location)
-    public function show(Request $request)
+    public function show()
     {
-        $location = $request["location"];
-        return $location;
-        // $weatherData = new weatherService($location);
+        $weatherService = new weatherService();
+        $weatherData = $weatherService->connectToApi();
+        return $weatherData;
     }
 }
